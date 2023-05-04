@@ -65,7 +65,7 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
 
         } else {
 
-            alert("Only numbers are allowed");
+            alert("Error! Only numbers are allowed");
 
         };
     };
