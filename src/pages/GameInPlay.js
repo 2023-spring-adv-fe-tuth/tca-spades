@@ -47,7 +47,7 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
     //};
 
         // Validation if/else statement for input score boxes
-        if (Number(val) | Number(valTwo) | val === 0 | valTwo === 0 ) {
+        if ((Number(val) && Number(valTwo)) | (val == 0 && valTwo == 0) | (val === 0 && Number(valTwo)) | ((Number(val) && valTwo == 0))) {
 
             setTeamOneScores([
                 ...teamOneScores
