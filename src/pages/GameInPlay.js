@@ -31,21 +31,46 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
     // function adds scores together for both teams after each turn once button is pressed
     const addTurnScore = () => {
 
-        setTeamOneScores([
-            ...teamOneScores
-            , Number(val)
-        ]);
+        // setTeamOneScores([
+        //     ...teamOneScores
+        //     , Number(val)
+        // ]);
 
-        setTeamTwoScores([
-            ...teamTwoScores
-            , Number(valTwo)
-        ]);
+        // setTeamTwoScores([
+        //     ...teamTwoScores
+        //     , Number(valTwo)
+        // ]);
 
-        // resets input value to zero for next turn/hand
-        setVal(0);
-        setValTwo(0);
+        // // resets input value to zero for next turn/hand
+        // setVal(0);
+        // setValTwo(0);
+    //};
+
+        // Validation if/else statement for input score boxes
+        if (Number(val) | Number(valTwo) | val === 0 | valTwo === 0 ) {
+
+            setTeamOneScores([
+                ...teamOneScores
+                , Number(val)
+            ]);
+
+            setTeamTwoScores([
+                ...teamTwoScores
+                , Number(valTwo)
+            ]);
+
+            // resets input value to zero for next turn/hand
+            setVal(0);
+            setValTwo(0);
+
+        } else {
+
+            alert("Only numbers are allowed");
+
+        };
     };
-
+    
+    // Navigation functions for back and home links
     const back = () => {
         nav(-1)
     };
@@ -53,6 +78,7 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
     const home = () => {
         nav(-2)
     };
+
     
     return (
     <>
@@ -67,6 +93,7 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
         <h2>Game in Progress...</h2>
             <label>Blue Team:</label> <span> </span>
                 <input
+                    placeholder="Enter score"
                     value= {val}
                     onChange={(e) => setVal(e.target.value)}
                     className="mt-3"
@@ -75,6 +102,7 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
             <br />
             <label>Red Team:</label> <span> </span>  
                 <input
+                    placeholder="Enter score"
                     value= {valTwo}
                     onChange={(e) => setValTwo(e.target.value)}
                 /> 
