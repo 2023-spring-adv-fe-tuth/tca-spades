@@ -70,11 +70,7 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
         };
     };
     
-    // Navigation functions for back and home links
-    const back = () => {
-        nav(-1)
-    };
-
+    // Navigation functions for home link
     const home = () => {
         nav(-2)
     };
@@ -83,9 +79,6 @@ export const GameInPlay = ({setupInfo, addGameresult}) => {
     return (
     <>
         <Nav className="justify-content-between" activeKey="/home">
-            <Nav.Item>
-                <Nav.Link onClick={back}>Back</Nav.Link>
-            </Nav.Item>
             <Nav.Item>
                 <Nav.Link onClick={home}>Exit</Nav.Link>
             </Nav.Item>
